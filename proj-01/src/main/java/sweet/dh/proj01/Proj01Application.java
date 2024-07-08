@@ -1,6 +1,6 @@
 package sweet.dh.proj01;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,13 +11,11 @@ import sweet.dh.proj01.repository.AutorityRepository;
 import sweet.dh.proj01.repository.SimpleUserRepository;
 
 @SpringBootApplication
+@RequiredArgsConstructor
 public class Proj01Application {
 
-    @Autowired
-    private SimpleUserRepository simpleUserRepository;
-
-    @Autowired
-    private AutorityRepository autorityRepository;
+    private final SimpleUserRepository simpleUserRepository;
+    private final AutorityRepository autorityRepository;
 
     @Bean
     public ApplicationRunner applicationRunner() {
